@@ -15,6 +15,7 @@ import multiprocessing
 import time
 import threading
 
+
 # ui配置文件
 cUi, cBase = uic.loadUiType("main_widget.ui")
 
@@ -217,6 +218,8 @@ class CMainWidget(QWidget, cUi):
             # image_win.set_current_cls(int(self.edit_cls.text()))
             
             if self.edit_cls.text() == '':
+                image_win.set_current_cls(0)
+            elif not self.edit_cls.text().isdigit():
                 image_win.set_current_cls(0)
             else:
                 image_win.set_current_cls(int(self.edit_cls.text()))

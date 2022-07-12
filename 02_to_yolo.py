@@ -2,7 +2,7 @@
 Author: Rane wang_ran20121
 Date: 2022-06-26 09:11:33
 LastEditors: Rane wang_ran20121
-LastEditTime: 2022-07-04 20:36:21
+LastEditTime: 2022-07-07 19:24:58
 FilePath: /10_coco_label_tool/02_to_yolo.py
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 '''
@@ -39,8 +39,8 @@ RUN:
 '''
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--json_file', default='/home/rane/2TDisk/01_Projects/04_huagong_proj/Dataset_Fanyingshi/ip142_data/train_v4_change_type3/ip142_train_v2_coco/annotations/instances_val2017.json', type=str, help="coco file path")
-    parser.add_argument('--save_dir', default='/home/rane/2TDisk/01_Projects/04_huagong_proj/Dataset_Fanyingshi/ip142_data/train_v4_change_type3/ip142_train_v2_coco/labels', type=str, help="where to save .txt labels")
+    parser.add_argument('--json_file', default='/home/rane/2TDisk/01_Projects/04_huagong_proj/Dataset_Chumuqi/0615_before_datas_coco/annotations/instances_train2017.json', type=str, help="coco file path")
+    parser.add_argument('--save_dir', default='/home/rane/2TDisk/01_Projects/04_huagong_proj/Dataset_Chumuqi/0615_before_datas_yolo/labels', type=str, help="where to save .txt labels")
     arg = parser.parse_args()
 
     data = json.load(open(arg.json_file, 'r'))
