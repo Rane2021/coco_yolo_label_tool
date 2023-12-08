@@ -1,3 +1,4 @@
-opencv_python==4.5.3.56
+# opencv_python==4.5.3.56
+opencv-python-headless==4.8.1.78
 Pillow==8.4.0
 PyQt5==5.15.5

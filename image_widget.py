@@ -72,12 +72,12 @@ class CImageWidget(QWidget, cUi):
             
             #self.img = QPixmap(self.img_path)            
             img_cv = cv2.imread(self.img_path)
-            height, width, depth = img_cv.shape
-            img_cv = cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB)
-            qimage_temp = QImage(img_cv.data, width, height, width * depth, QImage.Format_RGB888)
-            self.img = QPixmap.fromImage(qimage_temp)
-            
-            
+            if img_cv is not None:
+                height, width, depth = img_cv.shape
+                img_cv = cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB)
+                qimage_temp = QImage(img_cv.data, width, height, width * depth, QImage.Format_RGB888)
+                self.img = QPixmap.fromImage(qimage_temp)
+                
             if box_list is not None:
                 self.box_list = box_list
             else:

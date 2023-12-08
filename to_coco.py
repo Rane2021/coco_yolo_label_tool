@@ -157,9 +157,13 @@ class COCOCreater:
         with open(self.src_label_file, 'r') as f:
             for line in f.readlines():
                 labels.append(line.strip('\r\n'))
-        random.shuffle(labels)        
-        self.ori_train_labels = labels[0: int(len(labels) * 0.8)]
-        self.ori_val_labels = labels[int(len(labels) * 0.8):]
+        random.shuffle(labels)  
+              
+        # self.ori_train_labels = labels[0: int(len(labels) * 0.8)]
+        # self.ori_val_labels = labels[int(len(labels) * 0.8):]
+        self.ori_train_labels = labels[0: ]
+        self.ori_val_labels = []
+        
         #print(self.ori_train_labels)
         #print(self.ori_val_labels)
         

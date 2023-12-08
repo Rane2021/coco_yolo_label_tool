@@ -1,10 +1,8 @@
 '''
-Author: Rane wang_ran20121
+Description: 
 Date: 2022-07-04 19:12:57
-LastEditors: Rane wang_ran20121
-LastEditTime: 2022-07-04 20:15:59
+LastEditTime: 2022-08-13 08:00:44
 FilePath: /10_coco_label_tool/03_change_type3.py
-Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 '''
 import os
 import json

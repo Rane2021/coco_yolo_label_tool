@@ -1,10 +1,8 @@
 '''
-Author: Rane wang_ran20121
+Description: 
 Date: 2022-06-26 09:11:33
-LastEditors: Rane wang_ran20121
-LastEditTime: 2022-07-07 19:24:58
-FilePath: /10_coco_label_tool/02_to_yolo.py
-Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+LastEditTime: 2022-09-05 09:17:30
+FilePath: /10_coco_label_tool/02_voc2yolo_label.py
 '''
 import os
 import json
@@ -18,7 +16,6 @@ def convert(size, box):
     box格式: x,y,w,h
     返回值：x_center/image_width y_center/image_height width/image_width height/image_height
     '''
-
     dw = 1. / (size[0])
     dh = 1. / (size[1])
     x = box[0] + box[2] / 2.0
@@ -35,12 +32,12 @@ def convert(size, box):
 
 '''
 RUN:
-    python coco2yolo.py --json_file _annotations.coco.json --save_dir labels
+    python 02_coco2yolo_label.py --json_file _annotations.coco.json --save_dir labels
 '''
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--json_file', default='/home/rane/2TDisk/01_Projects/04_huagong_proj/Dataset_Chumuqi/0615_before_datas_coco/annotations/instances_train2017.json', type=str, help="coco file path")
-    parser.add_argument('--save_dir', default='/home/rane/2TDisk/01_Projects/04_huagong_proj/Dataset_Chumuqi/0615_before_datas_yolo/labels', type=str, help="where to save .txt labels")
+    parser.add_argument('--json_file', default='/home/rane/2TDisk/01_Projects/04_huagong_proj/Dataset_Dumei/0822-ip121_2_3+0/02_0825_ip12_0123_data/all_coco/annotations/instances_train2017.json', type=str, help="coco file path")
+    parser.add_argument('--save_dir', default='/home/rane/2TDisk/01_Projects/04_huagong_proj/Dataset_Dumei/0822-ip121_2_3+0/02_0825_ip12_0123_data/all_yolo/labels', type=str, help="where to save .txt labels")
     arg = parser.parse_args()
 
     data = json.load(open(arg.json_file, 'r'))
